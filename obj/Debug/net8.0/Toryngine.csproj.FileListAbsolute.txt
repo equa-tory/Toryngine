@@ -30,3 +30,4 @@ E:\Files_E\Dropbox\Toryngine\obj\Debug\net8.0\refint\Toryngine.dll
 E:\Files_E\Dropbox\Toryngine\obj\Debug\net8.0\Toryngine.pdb
 E:\Files_E\Dropbox\Toryngine\obj\Debug\net8.0\Toryngine.genruntimeconfig.cache
 E:\Files_E\Dropbox\Toryngine\obj\Debug\net8.0\ref\Toryngine.dll
+E:\Files_E\Dropbox\Toryngine\obj\Debug\net8.0\Toryngine.sourcelink.json
