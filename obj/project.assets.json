@@ -193,6 +193,15 @@
           }
         }
       },
+      "SimplexNoise/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.2/SimplexNoise.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.2/SimplexNoise.dll": {}
+        }
+      },
       "StbImageSharp/2.27.13": {
         "type": "package",
         "compile": {
@@ -384,6 +393,25 @@
         "opentk.windowing.graphicslibraryframework.nuspec"
       ]
     },
+    "SimplexNoise/2.0.0": {
+      "sha512": "v9q0D/5PSUx3T8ZIixjDEGlLYIDhkTbeQOgz/SddoKw16aoz4LFlg7FTu9DD0304p2m9VsHfTmygCgZ2FzIDVw==",
+      "type": "package",
+      "path": "simplexnoise/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net40/SimplexNoise.dll",
+        "lib/net45/SimplexNoise.dll",
+        "lib/net472/SimplexNoise.dll",
+        "lib/netcoreapp2.2/SimplexNoise.dll",
+        "lib/netstandard1.0/SimplexNoise.dll",
+        "lib/netstandard2.0/SimplexNoise.dll",
+        "simplexnoise.2.0.0.nupkg.sha512",
+        "simplexnoise.nuspec"
+      ]
+    },
     "StbImageSharp/2.27.13": {
       "sha512": "tHnP2RHgFzWbOS96UqvRO/LYU1WmpMT1bKiig45we+rpaXacBr11Fq2IBF+MqlgyLyNXxRz18E66qr4R9YlSbg==",
       "type": "package",
@@ -433,30 +461,29 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "OpenTK >= 4.8.2",
+      "SimplexNoise >= 2.0.0",
       "StbImageSharp >= 2.27.13"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\evgba\\.nuget\\packages\\": {}
+    "/home/sasha/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Files_E\\Dropbox\\Toryngine\\Toryngine.csproj",
+      "projectUniqueName": "/home/sasha/Dropbox/Toryngine/Toryngine.csproj",
       "projectName": "Toryngine",
-      "projectPath": "E:\\Files_E\\Dropbox\\Toryngine\\Toryngine.csproj",
-      "packagesPath": "C:\\Users\\evgba\\.nuget\\packages\\",
-      "outputPath": "E:\\Files_E\\Dropbox\\Toryngine\\obj\\",
+      "projectPath": "/home/sasha/Dropbox/Toryngine/Toryngine.csproj",
+      "packagesPath": "/home/sasha/.nuget/packages/",
+      "outputPath": "/home/sasha/Dropbox/Toryngine/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "D:\\evgba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/sasha/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -479,6 +506,10 @@
             "target": "Package",
             "version": "[4.8.2, )"
           },
+          "SimplexNoise": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "StbImageSharp": {
             "target": "Package",
             "version": "[2.27.13, )"
@@ -500,7 +531,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

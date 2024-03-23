@@ -4,6 +4,12 @@ using OpenTK.Mathematics;
 
 namespace Toryngine.World;
 
+public enum BlockType
+{
+    DIRT,
+    EMPTY
+}
+
 public enum Faces
 {
     FRONT,

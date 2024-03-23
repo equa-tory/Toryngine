@@ -9,6 +9,7 @@
       "Toryngine/1.0.0": {
         "dependencies": {
           "OpenTK": "4.8.2",
+          "SimplexNoise": "2.0.0",
           "StbImageSharp": "2.27.13"
         },
         "runtime": {
@@ -159,6 +160,14 @@
           }
         }
       },
+      "SimplexNoise/2.0.0": {
+        "runtime": {
+          "lib/netcoreapp2.2/SimplexNoise.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "StbImageSharp/2.27.13": {
         "runtime": {
           "lib/netstandard2.0/StbImageSharp.dll": {
@@ -252,6 +261,13 @@
       "sha512": "sha512-o50PgKL8G0Pqs7Lo7hu1ru+5X5l03aht5jaeik7McXFgVaBJzMLhMhZkiferx4bbcC9Rq597BOknDwqE/bsLOw==",
       "path": "opentk.windowing.graphicslibraryframework/4.8.2",
       "hashPath": "opentk.windowing.graphicslibraryframework.4.8.2.nupkg.sha512"
+    },
+    "SimplexNoise/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v9q0D/5PSUx3T8ZIixjDEGlLYIDhkTbeQOgz/SddoKw16aoz4LFlg7FTu9DD0304p2m9VsHfTmygCgZ2FzIDVw==",
+      "path": "simplexnoise/2.0.0",
+      "hashPath": "simplexnoise.2.0.0.nupkg.sha512"
     },
     "StbImageSharp/2.27.13": {
       "type": "package",

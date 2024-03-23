@@ -48,6 +48,10 @@ internal class Game : GameWindow
         
         GL.Enable(EnableCap.DepthTest);
 
+        GL.FrontFace(FrontFaceDirection.Cw);
+        GL.Enable(EnableCap.CullFace);
+        GL.CullFace(CullFaceMode.Back);
+
         camera = new Camera(width, height, Vector3.Zero);
         CursorState = CursorState.Grabbed;
     }
