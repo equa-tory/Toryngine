@@ -5,6 +5,7 @@ using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
+using OpenTK.Windowing.GraphicsLibraryFramework;
 using StbImageSharp;
 
 namespace Toryngine;
@@ -111,6 +112,9 @@ internal class Game : GameWindow
     int ebo;
     int textureID;
 
+    // camera
+    Camera camera;
+
     // transfortmation variables
     float yRot = 0f;
     
@@ -211,6 +215,9 @@ internal class Game : GameWindow
         GL.BindTexture(TextureTarget.Texture2D, 0);
 
         GL.Enable(EnableCap.DepthTest);
+
+        camera = new Camera(width, height, Vector3.Zero);
+        CursorState = CursorState.Grabbed;
     }
     protected override void OnUnload()
     {
@@ -238,8 +245,8 @@ internal class Game : GameWindow
 
         // transfromation matrices
         Matrix4 model = Matrix4.Identity;
-        Matrix4 view = Matrix4.Identity;
-        Matrix4 projection = Matrix4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(60.0f), width / height, 0.1f, 100.0f);
+        Matrix4 view = camera.GetViewMatrix();
+        Matrix4 projection = camera.GetProjectionMatrix();
 
 
         model = Matrix4.CreateRotationY(yRot);
@@ -266,7 +273,11 @@ internal class Game : GameWindow
     }
     protected override void OnUpdateFrame(FrameEventArgs args)
     {
+        MouseState mouse = MouseState;
+        KeyboardState input = KeyboardState;
+
         base.OnUpdateFrame(args);
+        camera.Update(input, mouse, args);
     }
 
     // Function to load a text file and return its contents as a string

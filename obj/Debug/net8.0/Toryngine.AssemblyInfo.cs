@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Toryngine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e866195c1daaa6fa1ec6cf6ab757cd91b55fb1a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53f5dfe6474029e386658b4a49428bd8968b39ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Toryngine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Toryngine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
