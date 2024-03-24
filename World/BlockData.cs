@@ -7,6 +7,7 @@ namespace Toryngine.World;
 public enum BlockType
 {
     DIRT,
+    GRASS,
     EMPTY
 }
 

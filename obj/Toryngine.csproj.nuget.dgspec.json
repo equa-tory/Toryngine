@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/sasha/Dropbox/Toryngine/Toryngine.csproj": {}
+    "E:\\Files_E\\Dropbox\\Toryngine\\Toryngine.csproj": {}
   },
   "projects": {
-    "/home/sasha/Dropbox/Toryngine/Toryngine.csproj": {
+    "E:\\Files_E\\Dropbox\\Toryngine\\Toryngine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/sasha/Dropbox/Toryngine/Toryngine.csproj",
+        "projectUniqueName": "E:\\Files_E\\Dropbox\\Toryngine\\Toryngine.csproj",
         "projectName": "Toryngine",
-        "projectPath": "/home/sasha/Dropbox/Toryngine/Toryngine.csproj",
-        "packagesPath": "/home/sasha/.nuget/packages/",
-        "outputPath": "/home/sasha/Dropbox/Toryngine/obj/",
+        "projectPath": "E:\\Files_E\\Dropbox\\Toryngine\\Toryngine.csproj",
+        "packagesPath": "C:\\Users\\evgba\\.nuget\\packages\\",
+        "outputPath": "E:\\Files_E\\Dropbox\\Toryngine\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/sasha/.nuget/NuGet/NuGet.Config"
+          "D:\\evgba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -67,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

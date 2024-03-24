@@ -84,6 +84,11 @@ internal class Game : GameWindow
 
         Context.SwapBuffers();
 
+        if(KeyboardState.IsKeyDown(Keys.Q) || KeyboardState.IsKeyDown(Keys.Escape))
+        {
+            Close();
+        }
+
         base.OnRenderFrame(args);
     }
     protected override void OnUpdateFrame(FrameEventArgs args)

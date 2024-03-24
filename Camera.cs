@@ -3,6 +3,7 @@ using System.Security.Cryptography.X509Certificates;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
+using OpenTK.Windowing.Desktop;
 using OpenTK.Windowing.GraphicsLibraryFramework;
 
 namespace Toryngine;

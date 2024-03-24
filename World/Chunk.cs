@@ -64,14 +64,17 @@ internal class Chunk
                 int columnHeight = (int)(heightMap[x,z]/10);
                 for(int y=0;y<HEIGHT;y++)
                 {
-                    if(y<columnHeight)
+                    BlockType type = BlockType.EMPTY;
+                    if(y<columnHeight - 1)
                     {
-                        chunkBlocks[x,y,z] = new Block(new Vector3(x,y,z), BlockType.DIRT);
+                        type = BlockType.DIRT;
                     }
-                    else
+                    if(y == columnHeight - 1)
                     {
-                        chunkBlocks[x,y,z] = new Block(new Vector3(x,y,z), BlockType.EMPTY);
+                        type = BlockType.GRASS;
                     }
+
+                    chunkBlocks[x,y,z] = new Block(new Vector3(x,y,z), type);
 
                 }
             }
@@ -83,96 +86,98 @@ internal class Chunk
         {
             for(int z=0;z<SIZE;z++)
             {
-                int columnHeight = (int)(heightMap[x,z]/10);
-                for(int y=0;y<columnHeight;y++)
+                for(int y=0;y<HEIGHT;y++)
                 {
                     // left faces
                     // qualifications: block to left is empty, is not farthest left in chunk
                     int numFaces = 0;
 
-                    if (x > 0)
+                    if(chunkBlocks[x,y,z].type != BlockType.EMPTY)
                     {
-                        if(chunkBlocks[x-1,y,z].type == BlockType.EMPTY)
+                        if (x > 0)
+                        {
+                            if(chunkBlocks[x-1,y,z].type == BlockType.EMPTY)
+                            {
+                                IntegrateFace(chunkBlocks[x,y,z], Faces.LEFT);
+                                numFaces++;
+                            }
+                        } else
                         {
                             IntegrateFace(chunkBlocks[x,y,z], Faces.LEFT);
                             numFaces++;
                         }
-                    } else
-                    {
-                        IntegrateFace(chunkBlocks[x,y,z], Faces.LEFT);
-                        numFaces++;
-                    }
-                    // right faces
-                    // qualifications: block to right is empty, is not farthest right in chunk
-                    if (x < SIZE-1)
-                    {
-                        if(chunkBlocks[x+1,y,z].type == BlockType.EMPTY)
+                        // right faces
+                        // qualifications: block to right is empty, is not farthest right in chunk
+                        if (x < SIZE-1)
+                        {
+                            if(chunkBlocks[x+1,y,z].type == BlockType.EMPTY)
+                            {
+                                IntegrateFace(chunkBlocks[x,y,z], Faces.RIGHT);
+                                numFaces++;
+                            }
+                        } else
                         {
                             IntegrateFace(chunkBlocks[x,y,z], Faces.RIGHT);
                             numFaces++;
                         }
-                    } else
-                    {
-                        IntegrateFace(chunkBlocks[x,y,z], Faces.RIGHT);
-                        numFaces++;
-                    }
-                    // top faces
-                    // qualifications: block to above is empty, is farthest up in chunk
-                    if (y < columnHeight-1)
-                    {
-                        if(chunkBlocks[x,y+1,z].type == BlockType.EMPTY)
+                        // top faces
+                        // qualifications: block to above is empty, is farthest up in chunk
+                        if (y < HEIGHT - 1)
+                        {
+                            if(chunkBlocks[x,y+1,z].type == BlockType.EMPTY)
+                            {
+                                IntegrateFace(chunkBlocks[x,y,z], Faces.TOP);
+                                numFaces++;
+                            }
+                        } else
                         {
                             IntegrateFace(chunkBlocks[x,y,z], Faces.TOP);
                             numFaces++;
                         }
-                    } else
-                    {
-                        IntegrateFace(chunkBlocks[x,y,z], Faces.TOP);
-                        numFaces++;
-                    }
-                    // bottom faces
-                    // qualifications: block to below is empty, is farthest down in chunk
-                    if (y > 0)
-                    {
-                        if(chunkBlocks[x,y-1,z].type == BlockType.EMPTY)
+                        // bottom faces
+                        // qualifications: block to below is empty, is farthest down in chunk
+                        if (y > 0)
+                        {
+                            if(chunkBlocks[x,y-1,z].type == BlockType.EMPTY)
+                            {
+                                IntegrateFace(chunkBlocks[x,y,z], Faces.BOTTOM);
+                                numFaces++;
+                            }
+                        } else
                         {
                             IntegrateFace(chunkBlocks[x,y,z], Faces.BOTTOM);
                             numFaces++;
                         }
-                    } else
-                    {
-                        IntegrateFace(chunkBlocks[x,y,z], Faces.BOTTOM);
-                        numFaces++;
-                    }
-                    // front faces
-                    if (z < SIZE-1)
-                    {
-                        if(chunkBlocks[x,y,z+1].type == BlockType.EMPTY)
+                        // front faces
+                        if (z < SIZE-1)
+                        {
+                            if(chunkBlocks[x,y,z+1].type == BlockType.EMPTY)
+                            {
+                                IntegrateFace(chunkBlocks[x,y,z], Faces.FRONT);
+                                numFaces++;
+                            }
+                        } else
                         {
                             IntegrateFace(chunkBlocks[x,y,z], Faces.FRONT);
                             numFaces++;
                         }
-                    } else
-                    {
-                        IntegrateFace(chunkBlocks[x,y,z], Faces.FRONT);
-                        numFaces++;
-                    }
-                    // back faces
-                    if (z > 0)
-                    {
-                        if(chunkBlocks[x,y,z-1].type == BlockType.EMPTY)
+                        // back faces
+                        if (z > 0)
+                        {
+                            if(chunkBlocks[x,y,z-1].type == BlockType.EMPTY)
+                            {
+                                IntegrateFace(chunkBlocks[x,y,z], Faces.BACK);
+                                numFaces++;
+                            }
+                        } else
                         {
                             IntegrateFace(chunkBlocks[x,y,z], Faces.BACK);
                             numFaces++;
                         }
-                    } else
-                    {
-                        IntegrateFace(chunkBlocks[x,y,z], Faces.BACK);
-                        numFaces++;
-                    }
-                    
+                        
 
-                    AddIndices(numFaces);
+                        AddIndices(numFaces);
+                    }
                 }
             }
         }
@@ -213,7 +218,7 @@ internal class Chunk
 
         chunkIBO = new IBO(chunkIndices);
 
-        texture = new Texture("dirt.png");
+        texture = new Texture("atlas.png");
     }
     public void Render(ShaderProgram program) // drawing the chunk
     {
